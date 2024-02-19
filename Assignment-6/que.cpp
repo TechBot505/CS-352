@@ -1,6 +1,7 @@
 #include <GL/glut.h>
 #include <iostream>
 #include <cmath>
+#define PI 3.14
 
 int sides = 4;
 float vertices[6][2];
@@ -24,7 +25,7 @@ void translate(float tx, float ty) {
 
 // Function to perform rotation: FInds the centroid of polygon and then rotate every vertex about the centroid
 void rotate(float angle) {
-    float radians = angle * 3.14159 / 180.0;
+    float radians = angle * PI / 180.0;
     float centerX = 0.0, centerY = 0.0;
 
     // Calculate the centroid of the polygon
@@ -100,7 +101,7 @@ int main(int argc, char** argv) {
 
     // Initialize the polygon vertices with some values
     for (int i = 0; i < sides; ++i) {
-        float angle = i * 2.0 * 3.14159 / sides;
+        float angle = i * 2.0 * PI / sides;
         vertices[i][0] = 2.0 * cos(angle);
         vertices[i][1] = 2.0 * sin(angle);
     }
